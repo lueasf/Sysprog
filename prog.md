@@ -38,3 +38,16 @@ en place un mécanisme de synchronisation avec wait().
 
 # WAITPID
 On peut attendre un processus en particulier avec waitpid().
+
+# EXEC
+On peut remplacer un processus par un autre avec exec().
+Il n'est pas possible avec fork de lancer un sous programme, pour cela il faut utiliser exec().
+Exec est une famille de fonctions :
+execl, execle, execlp, execv etc.
+-l : la fonction prend une liste d'arguments
+-v : la fonction prend un tableau d'arguments
+-p : le programme est cherché dans le PATH
+exemple :
+execv(const char *file, char *const argv[])
+En fait avec execv, le code du processus est remplacé par le code du programme passé en argument.
+Conclusion : c'est un recouvrement de code.
