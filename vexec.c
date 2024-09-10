@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include "errno.h"
 
 int main(){
 
@@ -16,6 +17,7 @@ int main(){
     char *argv[] = {"./exxe", (char*) NULL}; // on peut ajouter des arguments
     printf("pid avant exec() : %ld\n", (long) getpid()); // on voit que c'est le mm pid.
     execv("./exxe", argv);
+    printf("error : %d\n", errno);
     // cette ligne ne sera pas lue
     }
 

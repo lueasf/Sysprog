@@ -51,3 +51,12 @@ exemple :
 execv(const char *file, char *const argv[])
 En fait avec execv, le code du processus est remplacé par le code du programme passé en argument.
 Conclusion : c'est un recouvrement de code.
+
+# ERRNO
+Dans la lib *errno.h*, on a accès à une variable globale errno.
+On peut avoir un entier, qui est reférencé par un code d'erreur.
+On trouve l'erreur dans la doc de errno.
+
+# SYSTEM
+On peut lancer une commande système avec la fonction system().
+Elle fait partie de la lib stdlib.h.
