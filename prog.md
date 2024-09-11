@@ -32,6 +32,8 @@ qui sera le petit fils du père. Le père va aussi lancer un autre fils.
 Avec 2 fork, on a 4 processus. 
 On conjecture n fork donne 2^n processus.
 
+Cette fonction permet a son file d'heriter de toutes les variables d'environnement du père.
+
 # WAIT
 Ne savant pas lequel se termine avant lequel, on met
 en place un mécanisme de synchronisation avec wait().
@@ -60,3 +62,11 @@ On trouve l'erreur dans la doc de errno.
 # SYSTEM
 On peut lancer une commande système avec la fonction system().
 Elle fait partie de la lib stdlib.h.
+
+On aimerait créer un programme qui peut s'adapter a l'OS sur lequel il sera executé.
+# GETENV
+char *getenv(const char *name) permet de récupérer une variable d'environnement.
+
+# SETENV
+int setenv(const char *name, const char *value, int overwrite) permet de définir une variable d'environnement.
+
